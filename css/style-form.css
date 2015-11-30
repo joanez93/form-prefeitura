@@ -1,0 +1,222 @@
+/* --------------------------------
+	-folha de Formulário Prefeitura Santa Lúcia  
+	-Autor: Joanez Andrades
+	-21/11/2015 
+----------------------------------- */
+/*Importação de fontes*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700); /*Titulos - h1, h2, h3...*/
+@import url(http://fonts.googleapis.com/css?family=Roboto); /*Paragráfos - p, span*/
+@import url(http://fonts.googleapis.com/css?family=Oxygen); /*Menus, ul, li, botões e links*/
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icons/icomoon.eot?-gu21mg');
+	src:url('fonts/icons/icomoon.eot?#iefix-gu21mg') format('embedded-opentype'),
+		url('fonts/icons/icomoon.woff?-gu21mg') format('woff'),
+		url('fonts/icons/icomoon.ttf?-gu21mg') format('truetype'),
+		url('fonts/icons/icomoon.svg?-gu21mg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/*Configurações globais*/
+html{
+	overflow: none;
+}
+body{
+	margin: 0 auto;
+	font-size: 62.5%;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Montserrat', 'icomoon', sans-serif;
+}
+p,span,i{
+	font-family: 'Roboto', 'icomoon', sans-serif;
+}
+nav,ul,li,button,a{
+	font-family: 'Oxygen', 'icomoon', sans-serif;
+}
+ul, li, a{
+	list-style: none; 
+	text-decoration: none;
+}
+/*Media query para telas com 480px- */
+@media(max-width: 480px){
+
+}
+
+/*Media query para telas com 480px+ */
+@media(min-width: 480px){
+
+}
+
+/*Media query para telas com 768px+ */
+@media(min-width: 768px){
+
+}
+
+/*Media query para telas com 1024px+ */
+@media(min-width: 1024px){
+
+}
+
+/*Media query para telas com 1366px+ */
+@media (min-width: 1366px){
+
+	h1{font-size: 5em;}
+	h2{font-size: 3.5em;}
+	h3{font-size: 3em;}
+	h4{font-size: 2.5em;}
+	li, a{font-size: 2em;}
+	p{font-size: 1.8em; padding: 1% 5% 1% 5%;}
+	span{font-size: 1.3em;}
+
+	.title{
+		text-align: center;
+		color: rgba(236, 240, 241,1.0);
+	}
+	.subtitle{
+		text-align: center;
+		color: rgba(236, 240, 241, .8);
+	}
+	.text{
+		text-align: left;
+		color: rgba(236, 240, 241, .7)
+	}
+
+	/*Header*/
+	header{
+		background-color: rgba(46, 204, 113,1.0);
+		width: 100%;
+		height: 20vh;
+		border-bottom: 5px solid rgba(39, 174, 96,1.0);
+	}
+		header div.logo{
+			width: 49.5%;
+			height: auto;
+			margin: auto;
+			float: left;
+			border-right: 2px solid rgba(236, 240, 241,.2);
+		}
+			header div.logo img{
+				width: 119px;
+				height: 124px;
+				margin: 1% .5% auto 20%;
+				display: inline-block;
+				float: left;
+			}
+			header div.logo h2{
+				margin-top: 7%;
+				text-align: left;
+				color: rgba(236, 240, 241,.8);
+				text-shadow: 0 0 3px rgba(44, 62, 80, .3);
+			/*	border-right: 2px solid rgba(236, 240, 241,.8);*/
+			}
+
+		header div.title{
+			width: 49.5%;
+			height: auto;
+			margin: auto;
+			float: right;
+		}
+			header div.title h2{
+				width: 100%;
+				padding-top: 7%;
+				text-align: center;
+				color: rgba(236, 240, 241,.8);
+				text-shadow: 0 0 3px rgba(44, 62, 80, .3);
+			}
+	/*Main e Form*/
+	section{
+		width: 100%;
+		height: 80vh;
+	}
+	section article{
+		width: 49.5%;
+		height: auto;
+		float: left;
+		border-right: 2px solid rgba(236, 240, 241,.8);
+	}
+		article div.descricao{
+			width: 80%;
+			height: auto;
+			margin: 5% auto;
+		}
+			div.descricao p{
+				padding: 4%;
+				color: #212121;
+			}
+		
+	section div.formulario{
+		width: 49.5%;
+		height: auto;
+		float: right;
+	}
+		div.formulario form{
+			width: 90%;
+			height: auto;
+			margin: 5% auto 1% auto;
+		}
+
+		div.formulario form input, select{
+			width: auto;
+			height: 3em;
+			font-size: 1.5em;
+			padding-left: .5%;
+			margin: .5%;
+			border: 1px solid rgba(189, 195, 199, .6);
+			background: rgba(189, 195, 199, .2);
+		}
+			form input#nome, input#cidade, input#email{
+				width: 96.5%;
+				display: block;
+			}
+			form input#cnpj, input#cep{
+				width: 60%;
+				display: inline-block;
+			}
+			form input#licitacao, input#ano, input#numero, select{
+				width: 16%;
+				display: inline-block;
+			}
+			form input#bairro, input#rua{
+				width: 47%;
+				display: inline-block;
+			}
+			form input#ddd{
+				width: 10%;
+				display: inline-block;
+			}
+			form input#telefone, input#celular{
+				width: 84%;
+				display: inline-block;
+			}
+		div.formulario article.help-messages, article.sucess-messages{
+			width: 100%;
+			height: auto;
+			display: block;
+			margin: 1% auto 1% auto;
+		}	
+
+			article.help-messages div.help-message span{
+				background-color: rgba(231, 76, 60, 1);
+				width: 86%;
+				height: 1.5em;
+				line-height: 20px;
+				margin: auto auto 1% 5.5%;
+				font-size: 1.4em;
+				color: rgba(236, 240, 241,1.0);
+				text-align: center;
+				padding-left: 1em;
+				border-radius: 5px;
+				display: block;
+			}
+
+		div.formulario button{
+			width: 30%;
+			height: 3em;
+			font-size: 2em;
+			margin-right: 10%;
+			float: right;
+		}
+
+
+}
