@@ -11,12 +11,15 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style-form.css">
 
+	<!-- Google -->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="https://www.gstatic.com/recaptcha/api2/r20151117130340/recaptcha__pt_br.js"></script>
 
 	<title>Formulário de acesso a Licitações</title>
 
 </head>
 <body ng-controller="appFormCtrl">
-<header>
+<header id="form">
 	<div class="logo">
 		<img title="Brasão Municipio de Santa Lúcia" src="img/santalucia.png">
 		<h2>Município de Santa Lúcia</h2>
@@ -38,7 +41,7 @@
 	<div class="formulario">
 		<form name="linkForm" action="contato.php" method="post">
 			<input id="nome" type="text" name="empresa" placeholder="Razão social/Nome" ng-model="empresa" ng-required="true" ng-minlength="6" />
-			<input id="cnpj" type="text" name="cnpj" placeholder="CNPJ" ng-model="cnpj" ng-pattern="/^\d{8,10}/\d{4,5}{2,3}$/" ng-required="true" />
+			<input id="cnpj" type="text" name="cnpj" placeholder="CNPJ" ng-model="cnpj" ng-pattern="/^\d{8,10}/\d{4,5}\d{2,3}$/" ng-required="true" />
 			<input id="licitacao" type="number" name="licitacaoN" placeholder="Licitação Nº" ng-model="Nlicitacao" ng-required="true" />
 			<input id="ano" type="number" name="ano" placeholder="Ano" ng-model="ano" ng-pattern="/^\d{4}$/" ng-required="true" />
 			<input id="cidade" type="text" name="cidade" placeholder="Cidade" ng-model="cidade" ng-required="true" ng-minlength="6" />
@@ -57,8 +60,10 @@
 			<input id="email" type="email" name="email" placeholder="E-mail" ng-model="email" ng-required="true" />
 	<!-- 	<textarea name="complemento" placeholder="complemento"></textarea> -->
 
-		<button type="submit" ng-disabled="linkForm.$invalid">Obter Link</button>	
+			<div class="g-recaptcha" data-sitekey="6LeX0w4TAAAAAINGtm-sQPCU4Ud8JCiPWSsHzy2e"></div>
+			<button type="submit" ng-disabled="linkForm.$invalid">Obter Link</button>	
 		</form>
+
 			<!-- Mensagens de ajuda -->
 		<article class="help-messages">
 			<div class="help-message" ng-messages="linkForm.empresa.$error">

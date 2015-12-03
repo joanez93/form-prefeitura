@@ -84,33 +84,42 @@ ul, li, a{
 
 	/*Header*/
 	header{
-		background-color: rgba(46, 204, 113,1.0);
 		width: 100%;
 		height: 20vh;
 		border-bottom: 5px solid rgba(39, 174, 96,1.0);
 	}
-		header div.logo{
-			width: 49.5%;
-			height: auto;
-			margin: auto;
-			float: left;
-			border-right: 2px solid rgba(236, 240, 241,.2);
-		}
-			header div.logo img{
-				width: 119px;
-				height: 124px;
-				margin: 1% .5% auto 20%;
-				display: inline-block;
-				float: left;
-			}
-			header div.logo h2{
-				margin-top: 7%;
-				text-align: left;
-				color: rgba(236, 240, 241,.8);
-				text-shadow: 0 0 3px rgba(44, 62, 80, .3);
-			/*	border-right: 2px solid rgba(236, 240, 241,.8);*/
-			}
 
+		header#form{
+			background-color: rgba(46, 204, 113,1.0);
+		}
+			header#form div.logo{
+				width: 49.5%;
+				height: auto;
+				margin: auto;
+				float: left;
+				border-right: 2px solid rgba(236, 240, 241,.2);
+			}
+				header#form div.logo img{
+					width: 119px;
+					height: 124px;
+					margin: 1% .5% auto 20%;
+					display: inline-block;
+					float: left;
+				}
+				header#form div.logo h2{
+					margin-top: 7%;
+					text-align: left;
+					color: rgba(236, 240, 241,.8);
+					text-shadow: 0 0 3px rgba(44, 62, 80, .3);
+				/*	border-right: 2px solid rgba(236, 240, 241,.8);*/
+				}
+
+		header#contato{
+			background: url(../img/background.jpg) no-repeat fixed;
+			position: absolute;
+			top: 0;
+			z-index: -1;
+		}		
 		header div.title{
 			width: 49.5%;
 			height: auto;
@@ -142,7 +151,7 @@ ul, li, a{
 		}
 			div.descricao p{
 				padding: 4%;
-				color: #212121;
+				color: rgba(44, 62, 80, .7);
 			}
 		
 	section div.formulario{
@@ -193,7 +202,7 @@ ul, li, a{
 			width: 100%;
 			height: auto;
 			display: block;
-			margin: 1% auto 1% auto;
+			margin: 1% auto auto auto;
 		}	
 
 			article.help-messages div.help-message span{
@@ -209,12 +218,16 @@ ul, li, a{
 				border-radius: 5px;
 				display: block;
 			}
-
+		div.formulario div.g-recaptcha{
+			width: 40%;
+			right: auto;
+			float: left;
+		}
 		div.formulario button{
-			width: 30%;
-			height: 3em;
+			width: 50%;
+			height: 3.8em;
 			font-size: 2em;
-			margin-right: 10%;
+			margin-right: 3%;
 			float: right;
 		}
 

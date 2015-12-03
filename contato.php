@@ -57,27 +57,41 @@ if(!empty($_POST['empresa'])){
 
 	mail($emailto, $assunto, $mensagemHTML, $headers, "-r" . $emailfrom);
 
-	$resultado = "Obrigado! Link para Licitações: <a>"; // Mensagem de sucesso
+		$resultado = "Obrigado! <a href='http://192.168.10.249:7474/esportal/esportalpublicacao.loadPublicacao.logic?publicacao.idPublicacao=46'>Ir para Licitações</a>"; // Mensagem de sucesso
 
-} else {
-
-	$resultado = "Houve um erro ao enviar sua mensagem. Por favor, tente novamente"; // Mensagem de erro
-}
-echo $resultado;
-// Limpar variáveis globais
-unset ($_POST['contactempresa']);
-unset ($_POST['contactcnpj']);
-unset ($_POST['contactlicitacaoN']);
-unset ($_POST['contactano']);
-unset ($_POST['contactcidade']);
-unset ($_POST['contactbairro']);
-unset ($_POST['contactrua']);
-unset ($_POST['contactcep']);
-unset ($_POST['contactidn']);
-unset ($_POST['contactestado']);
-unset ($_POST['contactddd']);
-unset ($_POST['contacttelefone']);
-unset ($_POST['contactcelular']);
-unset ($_POST['contactemail']);
+	} else {
+		$resultado = "<h2>Houve um erro ao enviar sua mensagem. Por favor, tente novamente</h2>"; // Mensagem de erro
+	}
+	echo $resultado;
+	// Limpar variáveis globais
+	unset ($_POST['contactempresa']);
+	unset ($_POST['contactcnpj']);
+	unset ($_POST['contactlicitacaoN']);
+	unset ($_POST['contactano']);
+	unset ($_POST['contactcidade']);
+	unset ($_POST['contactbairro']);
+	unset ($_POST['contactrua']);
+	unset ($_POST['contactcep']);
+	unset ($_POST['contactidn']);
+	unset ($_POST['contactestado']);
+	unset ($_POST['contactddd']);
+	unset ($_POST['contacttelefone']);
+	unset ($_POST['contactcelular']);
+	unset ($_POST['contactemail']);
 ?>
-<br/><a href="http://192.168.10.249:7474/esportal/esportalpublicacao.loadPublicacao.logic?publicacao.idPublicacao=46" target="_parent">Ir para licitações</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+
+	<!-- Import Styles -->
+	<link rel="stylesheet" type="text/css" href="css/style-form.css">
+
+	<title>Licitações - Prefeitura Municipal de Santa Lúcia-PR</title>
+</head>
+<body>
+<header id="contato">
+	<h1>Obrigado!</h1>
+</header>
+</body>
+</html>
