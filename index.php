@@ -1,7 +1,22 @@
 <?php
-      foreach ($_POST as $key => $value) {
-          echo '<p><strong>' . $key.':</strong> '.$value.'</p>';
-      }
+	// busca a biblioteca recaptcha
+	require_once "recaptchalib.php";
+
+    // sua chave secreta
+	$secret = "6LdMrQ4TAAAAABEuE3ht6zTvRnYJcqMFbcns_Li2";
+	 
+	// resposta vazia
+	$response = null;
+	 
+	// verifique a chave secreta
+	$reCaptcha = new ReCaptcha($secret);
+
+	if ($_POST["g-recaptcha-response"]) {
+		$response = $reCaptcha->verifyResponse(
+        $_SERVER["REMOTE_ADDR"],
+        $_POST["g-recaptcha-response"]
+    );
+}
 ?>
 
 
@@ -35,7 +50,7 @@
 		<h2>Formulário de Controle - Licitações</h2>
 	</div>
 </header>
-<section>
+<section id="form">
 	<article>
 		<div class="descricao">
 			<h3>Todos os campos são obrigatórios.</h3>
@@ -67,7 +82,7 @@
 			<input id="email" type="email" name="email" placeholder="E-mail" ng-model="email" ng-required="true" />
 	<!-- 	<textarea name="complemento" placeholder="complemento"></textarea> -->
 
-			<div class="g-recaptcha" data-sitekey="6LeX0w4TAAAAAINGtm-sQPCU4Ud8JCiPWSsHzy2e"></div>
+			<div class="g-recaptcha" data-sitekey="6LdMrQ4TAAAAAMNsjveY-SXDIxOOeMUJgVW30w4j"></div>
 			<button type="submit" ng-disabled="linkForm.$invalid">Obter Link</button>	
 		</form>
 

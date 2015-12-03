@@ -38,6 +38,11 @@ ul, li, a{
 	list-style: none; 
 	text-decoration: none;
 }
+
+/*Icones*/
+.ico-mail:before{content: '\e847'; display: block;}
+
+
 /*Media query para telas com 480px- */
 @media(max-width: 480px){
 
@@ -112,14 +117,7 @@ ul, li, a{
 					color: rgba(236, 240, 241,.8);
 					text-shadow: 0 0 3px rgba(44, 62, 80, .3);
 				/*	border-right: 2px solid rgba(236, 240, 241,.8);*/
-				}
-
-		header#contato{
-			background: url(../img/background.jpg) no-repeat fixed;
-			position: absolute;
-			top: 0;
-			z-index: -1;
-		}		
+				}	
 		header div.title{
 			width: 49.5%;
 			height: auto;
@@ -138,13 +136,13 @@ ul, li, a{
 		width: 100%;
 		height: 80vh;
 	}
-	section article{
+	section#form article{
 		width: 49.5%;
 		height: auto;
 		float: left;
 		border-right: 2px solid rgba(236, 240, 241,.8);
 	}
-		article div.descricao{
+		section#form article div.descricao{
 			width: 80%;
 			height: auto;
 			margin: 5% auto;
@@ -154,18 +152,18 @@ ul, li, a{
 				color: rgba(44, 62, 80, .7);
 			}
 		
-	section div.formulario{
+	section#form div.formulario{
 		width: 49.5%;
 		height: auto;
 		float: right;
 	}
-		div.formulario form{
+		section#form div.formulario form{
 			width: 90%;
 			height: auto;
 			margin: 5% auto 1% auto;
 		}
 
-		div.formulario form input, select{
+		section#form div.formulario form input, select{
 			width: auto;
 			height: 3em;
 			font-size: 1.5em;
@@ -224,12 +222,22 @@ ul, li, a{
 			float: left;
 		}
 		div.formulario button{
-			width: 50%;
+			width: 40%;
 			height: 3.8em;
 			font-size: 2em;
 			margin-right: 3%;
 			float: right;
 		}
-
-
+/*Contato*/
+	header#contato{
+		width: 100%;
+		height: 100vh;
+		background: url(../img/background.jpg) no-repeat fixed;
+		background-size: 100% 100%;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		overflow: hidden;
+		border: none;
+	}	
 }

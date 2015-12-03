@@ -57,10 +57,10 @@ if(!empty($_POST['empresa'])){
 
 	mail($emailto, $assunto, $mensagemHTML, $headers, "-r" . $emailfrom);
 
-		$resultado = "Obrigado! <a href='http://192.168.10.249:7474/esportal/esportalpublicacao.loadPublicacao.logic?publicacao.idPublicacao=46'>Ir para Licitações</a>"; // Mensagem de sucesso
+		$resultado = "<h3 class='ico-mail'>Obrigado! <a href='http://192.168.10.249:7474/esportal/esportalpublicacao.loadPublicacao.logic?publicacao.idPublicacao=46'>Ir para Licitações</a>"; // Mensagem de sucesso
 
 	} else {
-		$resultado = "<h2>Houve um erro ao enviar sua mensagem. Por favor, tente novamente</h2>"; // Mensagem de erro
+		$resultado = "<h3 class='ico-mail title'>Houve um erro ao enviar o formulário. Por favor, tente novamente</h3>"; // Mensagem de erro
 	}
 	echo $resultado;
 	// Limpar variáveis globais
@@ -80,18 +80,22 @@ if(!empty($_POST['empresa'])){
 	unset ($_POST['contactemail']);
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="appContato">
 <head>
 	<meta charset="utf-8">
 
 	<!-- Import Styles -->
 	<link rel="stylesheet" type="text/css" href="css/style-form.css">
 
+	<!-- Import JS -->
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="lib/app-contato.js"></script>
+
 	<title>Licitações - Prefeitura Municipal de Santa Lúcia-PR</title>
 </head>
-<body>
+<body ng-controller="appContatoCtrl">
 <header id="contato">
-	<h1>Obrigado!</h1>
+
 </header>
 </body>
 </html>
